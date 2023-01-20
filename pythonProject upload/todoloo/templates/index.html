@@ -1,0 +1,20 @@
+{% include "header.jinja" %}
+{% for eintrag in liste %}
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{ eintrag[1] }}</h5>
+      <p class="card-text">{{ eintrag[2] }}</p>
+      <a href="/delete?ref_id={{ eintrag[0] }}" class="btn btn-warning" role="button" style="float: right;">❌</a>
+      <a href="/edit?ref_id={{ eintrag[0] }}" class="btn btn-warning" role="button" style="float: right; margin-right: 10px">✏️</a>
+    </div>
+  </div>
+
+{% endfor %}
+
+{% if not liste %}
+<h2>
+  Du hast keine Notizen
+</h2>
+{% endif %}
+
+{% include "footer.jinja" %}

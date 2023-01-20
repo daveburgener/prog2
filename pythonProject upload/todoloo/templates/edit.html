@@ -1,0 +1,10 @@
+{% include "header.jinja" %}
+<form method="POST">
+  <div class="mb-3">
+    <label for="notiz" class="form-label">Notiz editieren</label>
+    <input type="text" class="form-control" id="notiz" name="text" value="{{ eintrag[2] }}">
+    <input type="hidden" value="{{ eintrag[0] }}" name="ref_id">
+  </div>
+  <button type="submit" class="btn btn-primary">Editieren</button>
+</form>
+{% include "footer.jinja" %}
